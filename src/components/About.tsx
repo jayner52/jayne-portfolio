@@ -40,7 +40,7 @@ export default function About() {
         >
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
-            A CS executive who develops managers, drives enterprise growth, and builds AI-powered customer programs
+            A CS leader who develops managers, drives enterprise growth, and builds AI-powered customer programs
           </p>
         </motion.div>
 

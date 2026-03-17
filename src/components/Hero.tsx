@@ -188,7 +188,7 @@ export default function Hero() {
               margin: '0 auto 1.5rem',
             }}
           >
-            Customer Success & Account Management Executive
+            Customer Success & Account Management Leader
           </motion.h2>
 
           <motion.p
@@ -203,7 +203,7 @@ export default function Hero() {
               lineHeight: 1.7,
             }}
           >
-            Building and leading high-performing CS organizations — from individual contributors to Team Leads and managers. A people-first executive with a CPA foundation, a track record of enterprise growth, and a hands-on approach to AI innovation.
+            Building and leading high-performing CS organizations — from individual contributors to Team Leads and managers. A people-first leader with a CPA foundation, a track record of enterprise growth, and a hands-on approach to AI innovation.
           </motion.p>
 
           <motion.div
