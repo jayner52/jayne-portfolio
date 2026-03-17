@@ -41,8 +41,8 @@ const stats = [
     value: 7,
     suffix: '',
     prefix: '',
-    label: 'Managers Developed',
-    description: 'Second-line leader: grew and coached team from 3 to 7 managers, including a Team Lead',
+    label: 'Direct Reports',
+    description: 'Hired and developed AMs from zero CS experience to high performers, including a Team Lead',
   },
   {
     icon: Layers,
