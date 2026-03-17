@@ -5,10 +5,13 @@ import { Menu, X, Linkedin, Mail, Phone } from 'lucide-react';
 const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#stats', label: 'Impact' },
+  { href: '#next-role', label: 'Next Role' },
   { href: '#experience', label: 'Experience' },
   { href: '#user-groups', label: 'User Groups' },
   { href: '#ai-projects', label: 'AI Projects' },
-  { href: '#next-role', label: 'Next Role' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#certifications', label: 'Certifications' },
+  { href: '#education', label: 'Education' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -78,7 +81,7 @@ export default function Navigation() {
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '2rem',
+            gap: '1.25rem',
           }} className="desktop-nav">
             {navLinks.map((link) => (
               <a

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDown, Linkedin, Mail, MapPin, Dog } from 'lucide-react';
+import { ArrowDown, Linkedin, Mail, MapPin, Dog, Download } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Hero() {
@@ -228,6 +228,14 @@ export default function Hero() {
             >
               <Mail size={18} />
               Get in Touch
+            </a>
+            <a
+              href="/resume.pdf"
+              download="Jayne Ingram-Roberts Resume.pdf"
+              className="btn btn-secondary"
+            >
+              <Download size={18} />
+              Download Resume
             </a>
             <a
               href="https://linkedin.com/in/jayneingram"

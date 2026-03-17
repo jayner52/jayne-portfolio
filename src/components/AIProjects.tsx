@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Sparkles, Briefcase, Tv, Globe, Code2, ExternalLink, Users, Wrench, Lock } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Sparkles, Briefcase, Tv, Globe, Code2, ExternalLink, Users, Wrench, Lock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projects = [
   {
@@ -99,6 +99,12 @@ const projects = [
 export default function AIProjects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent(c => (c - 1 + projects.length) % projects.length);
+  const next = () => setCurrent(c => (c + 1) % projects.length);
+
+  const project = projects[current];
 
   return (
     <section id="ai-projects" className="section" style={{ background: 'var(--color-white)' }}>
@@ -123,132 +129,135 @@ export default function AIProjects() {
           </p>
         </motion.div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem',
-        }}>
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card"
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                position: 'relative',
-                overflow: 'hidden',
-              }}
-            >
-              <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                height: '4px',
-                background: 'var(--gradient-primary)',
-              }} />
+        {/* Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ position: 'relative' }}
+        >
+          {/* Card */}
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            className="card"
+            style={{
+              maxWidth: '720px',
+              margin: '0 auto',
+              padding: '2.5rem',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '4px',
+              background: 'var(--gradient-primary)',
+            }} />
 
+            <div style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between',
+              marginBottom: '1.25rem',
+            }}>
               <div style={{
+                width: '56px',
+                height: '56px',
+                borderRadius: '14px',
+                background: 'var(--gradient-card)',
                 display: 'flex',
-                alignItems: 'flex-start',
-                justifyContent: 'space-between',
-                marginBottom: '1rem',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--color-primary)',
               }}>
-                <div style={{
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '12px',
-                  background: 'var(--gradient-card)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--color-primary)',
-                }}>
-                  <project.icon size={24} />
-                </div>
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  color: project.statusColor,
-                  background: `${project.statusColor}15`,
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '1rem',
-                }}>
-                  {project.status}
-                </span>
+                <project.icon size={26} />
               </div>
-
-              <h3 style={{
-                fontSize: '1.25rem',
+              <span style={{
+                fontSize: '0.8rem',
                 fontWeight: 600,
-                color: 'var(--color-text)',
-                marginBottom: '0.75rem',
-                fontFamily: 'var(--font-sans)',
+                color: project.statusColor,
+                background: `${project.statusColor}15`,
+                padding: '0.3rem 0.85rem',
+                borderRadius: '1rem',
               }}>
-                {project.title}
-              </h3>
+                {project.status}
+              </span>
+            </div>
 
-              <p style={{
-                fontSize: '0.9rem',
-                color: 'var(--color-text-light)',
-                marginBottom: '1rem',
-                lineHeight: 1.6,
-              }}>
-                {project.description}
-              </p>
+            <h3 style={{
+              fontSize: '1.5rem',
+              fontWeight: 600,
+              color: 'var(--color-text)',
+              marginBottom: '0.75rem',
+              fontFamily: 'var(--font-sans)',
+            }}>
+              {project.title}
+            </h3>
 
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: '0 0 1rem 0',
-                flex: 1,
-              }}>
-                {project.highlights.map((highlight, hIndex) => (
-                  <li
-                    key={hIndex}
-                    style={{
-                      fontSize: '0.85rem',
-                      color: 'var(--color-text-light)',
-                      padding: '0.25rem 0',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '0.5rem',
-                    }}
-                  >
-                    <span style={{ color: 'var(--color-primary)' }}>•</span>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
+            <p style={{
+              fontSize: '0.95rem',
+              color: 'var(--color-text-light)',
+              marginBottom: '1.25rem',
+              lineHeight: 1.65,
+            }}>
+              {project.description}
+            </p>
 
-              <div style={{ marginTop: 'auto' }}>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      fontSize: '0.875rem',
-                      fontWeight: 500,
-                      color: 'var(--color-primary)',
-                    }}
-                  >
-                    View Project <ExternalLink size={14} />
-                  </a>
-                )}
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: '0 0 1.5rem 0',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '0.4rem',
+            }}>
+              {project.highlights.map((highlight, hIndex) => (
+                <li
+                  key={hIndex}
+                  style={{
+                    fontSize: '0.875rem',
+                    color: 'var(--color-text-light)',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '0.5rem',
+                  }}
+                >
+                  <span style={{ color: 'var(--color-primary)', flexShrink: 0 }}>•</span>
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+
+            {project.link && (
+              <div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
+                    color: 'var(--color-primary)',
+                  }}
+                >
+                  View Project <ExternalLink size={14} />
+                </a>
                 {project.password && (
                   <span style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.25rem',
-                    fontSize: '0.65rem',
+                    fontSize: '0.7rem',
                     color: 'var(--color-text-lighter)',
                     marginTop: '0.25rem',
                   }}>
@@ -257,9 +266,112 @@ export default function AIProjects() {
                   </span>
                 )}
               </div>
-            </motion.div>
+            )}
+          </motion.div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prev}
+            aria-label="Previous project"
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
+              border: '2px solid var(--color-border)',
+              background: 'var(--color-white)',
+              color: 'var(--color-text)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              boxShadow: 'var(--shadow-md)',
+              transition: 'var(--transition)',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--color-primary)';
+              (e.currentTarget as HTMLButtonElement).style.color = 'var(--color-primary)';
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--color-border)';
+              (e.currentTarget as HTMLButtonElement).style.color = 'var(--color-text)';
+            }}
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <button
+            onClick={next}
+            aria-label="Next project"
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
+              border: '2px solid var(--color-border)',
+              background: 'var(--color-white)',
+              color: 'var(--color-text)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              boxShadow: 'var(--shadow-md)',
+              transition: 'var(--transition)',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--color-primary)';
+              (e.currentTarget as HTMLButtonElement).style.color = 'var(--color-primary)';
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--color-border)';
+              (e.currentTarget as HTMLButtonElement).style.color = 'var(--color-text)';
+            }}
+          >
+            <ChevronRight size={20} />
+          </button>
+        </motion.div>
+
+        {/* Dots */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '0.5rem',
+          marginTop: '1.5rem',
+        }}>
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              aria-label={`Go to project ${index + 1}`}
+              style={{
+                width: index === current ? '24px' : '8px',
+                height: '8px',
+                borderRadius: '4px',
+                border: 'none',
+                background: index === current ? 'var(--color-primary)' : 'var(--color-border)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                padding: 0,
+              }}
+            />
           ))}
         </div>
+
+        {/* Counter */}
+        <p style={{
+          textAlign: 'center',
+          fontSize: '0.8rem',
+          color: 'var(--color-text-lighter)',
+          marginTop: '0.75rem',
+        }}>
+          {current + 1} / {projects.length}
+        </p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -279,7 +391,7 @@ export default function AIProjects() {
             maxWidth: '700px',
             margin: '0 auto',
           }}>
-            <strong>Why this matters:</strong> These projects demonstrate my approach to innovation -
+            <strong>Why this matters:</strong> These projects demonstrate my approach to innovation —
             I'm not waiting for permission to experiment with AI. I'm building, learning, and
             finding practical applications that drive real value. Technical curiosity paired with
             business acumen.

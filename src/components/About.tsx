@@ -58,10 +58,7 @@ export default function About() {
               background: 'var(--gradient-card)',
               borderRadius: '1.5rem',
               padding: '2rem',
-              maxHeight: '420px',
-              overflowY: 'auto',
             }}
-            className="about-scroll"
           >
             <p style={{
               fontSize: '1rem',

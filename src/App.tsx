@@ -12,6 +12,7 @@ import Education from './components/Education';
 import Community from './components/Community';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import FloatingCTA from './components/FloatingCTA';
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
         <Hero />
         <About />
         <Stats />
+        <NextRole />
         <Experience />
         <ClientUserGroups />
         <AIProjects />
-        <NextRole />
         <Skills />
         <Certifications />
         <Education />
@@ -32,6 +33,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingCTA />
     </>
   );
 }
