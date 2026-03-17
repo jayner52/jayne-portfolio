@@ -6,9 +6,15 @@ import { Sparkles, Users, Heart, Bike, Code } from 'lucide-react';
 const activities = [
   {
     icon: Sparkles,
+    title: 'Host, SheBuilds Toronto',
+    description: 'Hosted SheBuilds Toronto — a live, in-person vibe coding event bringing together 90 women to build with AI. Organized and led the full event experience.',
+    highlight: true,
+  },
+  {
+    icon: Sparkles,
     title: 'Lovable SheBuilds Participant',
     description: 'Selected as 1 of 200 participants from 2,000+ applicants for this women-in-tech AI building program.',
-    highlight: true,
+    highlight: false,
   },
   {
     icon: Heart,

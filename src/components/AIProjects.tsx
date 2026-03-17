@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Sparkles, Briefcase, Tv, Globe, Code2, ExternalLink, Users, Wrench, Lock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projects = [
@@ -100,9 +100,18 @@ export default function AIProjects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const prev = () => setCurrent(c => (c - 1 + projects.length) % projects.length);
-  const next = () => setCurrent(c => (c + 1) % projects.length);
+  useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(() => {
+      setCurrent(c => (c + 1) % projects.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [paused]);
+
+  const prev = () => { setPaused(true); setCurrent(c => (c - 1 + projects.length) % projects.length); };
+  const next = () => { setPaused(true); setCurrent(c => (c + 1) % projects.length); };
 
   const project = projects[current];
 
@@ -135,6 +144,8 @@ export default function AIProjects() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ position: 'relative' }}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
         >
           {/* Card */}
           <motion.div
@@ -347,7 +358,7 @@ export default function AIProjects() {
           {projects.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrent(index)}
+              onClick={() => { setPaused(true); setCurrent(index); }}
               aria-label={`Go to project ${index + 1}`}
               style={{
                 width: index === current ? '24px' : '8px',
