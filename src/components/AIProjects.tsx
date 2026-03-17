@@ -3,8 +3,6 @@ import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Sparkles, Briefcase, Tv, Globe, ExternalLink, Users, Wrench, Lock, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const THUMB = 'https://image.thum.io/get/width/600/crop/350/';
-
 const projects = [
   {
     icon: Wrench,
@@ -25,7 +23,7 @@ const projects = [
     icon: Briefcase,
     title: 'Go-To-Market Toolbox',
     description: 'AI-driven enablement prototype unifying GTM tools, frameworks, and templates into a single intelligent platform.',
-    status: 'In Active Procurement',
+    status: 'Enterprise GTM Tooling',
     statusColor: '#F59E0B',
     highlights: [
       'Presented to Vena C-Suite with positive reception',
@@ -136,20 +134,9 @@ export default function AIProjects() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
             className="card"
-            style={{ maxWidth: '720px', margin: '0 auto', padding: 0, overflow: 'hidden' }}
+            style={{ maxWidth: '720px', margin: '0 auto', overflow: 'hidden', position: 'relative' }}
           >
-            {/* Site preview */}
-            <div style={{ width: '100%', height: '200px', overflow: 'hidden', borderRadius: '1rem 1rem 0 0', background: 'var(--color-bg-alt)', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'var(--gradient-primary)', zIndex: 1 }} />
-              <img
-                src={`${THUMB}${project.link}`}
-                alt={`${project.title} preview`}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
-              />
-            </div>
-
-            {/* Card body */}
-            <div style={{ padding: '2rem' }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--gradient-primary)' }}></div>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
                 <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--gradient-card)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)' }}>
                   <project.icon size={26} />
@@ -194,7 +181,6 @@ export default function AIProjects() {
                   )}
                 </div>
               )}
-            </div>
           </motion.div>
 
           {/* Prev button */}
