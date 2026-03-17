@@ -13,7 +13,7 @@ const pillars = [
   {
     icon: Users,
     title: 'People Leadership',
-    description: 'The opportunity to build, scale, and develop high-performing CS and AM teams, coaching managers and fostering cultures of growth.',
+    description: 'The opportunity to lead as a second-line manager — building and coaching managers, developing Team Leads, and scaling high-performing CS organizations.',
     color: '#06B6D4',
   },
   {

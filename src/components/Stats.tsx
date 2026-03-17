@@ -41,8 +41,8 @@ const stats = [
     value: 7,
     suffix: '',
     prefix: '',
-    label: 'Managers Scaled To',
-    description: 'Grew AM team from 3 to 7 managers',
+    label: 'Managers Developed',
+    description: 'Second-line leader: grew and coached team from 3 to 7 managers, including a Team Lead',
   },
   {
     icon: Layers,
@@ -101,7 +101,7 @@ export default function Stats() {
         >
           <h2 className="section-title">Proven Impact</h2>
           <p className="section-subtitle">
-            A track record of driving growth, building teams, and exceeding targets at enterprise scale
+            A track record of driving growth, developing managers, and exceeding targets at enterprise scale
           </p>
         </motion.div>
 

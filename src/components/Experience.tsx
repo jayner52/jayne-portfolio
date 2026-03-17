@@ -34,13 +34,13 @@ const experiences: Company[] = [
         isCurrent: true,
         keyMetrics: [
           { value: '$30M', label: 'Portfolio' },
-          { value: '7', label: 'Direct Reports' },
+          { value: '7', label: 'Managers Led' },
           { value: '40%', label: 'Forecast Accuracy Gain' },
         ],
-        tags: ['Team Leadership', 'AI Innovation', 'Process Building'],
+        tags: ['Second-Line Management', 'AI Innovation', 'Process Building'],
         highlights: [
-          'Lead and develop a team of 7 Account Managers driving expansion and retention across enterprise portfolio',
-          'Scaled AM team from 3 to 7 managers, building frameworks for consistent execution',
+          'Lead a team of 7 Account Managers and a Team Lead, driving expansion and retention across a $30M enterprise portfolio',
+          'Scaled AM team from 3 to 7, operating as a second-line manager by developing a Team Lead alongside front-line Account Managers',
           'Pioneered AI experimentation: customer health insights, predictive churn analysis',
           'Embedded pricing/renewal workflows into Salesforce, Gong, Seismic, CPQ',
         ],
@@ -120,6 +120,7 @@ const experiences: Company[] = [
 ];
 
 const tagIcons: Record<string, typeof Users> = {
+  'Second-Line Management': Users,
   'Team Leadership': Users,
   'AI Innovation': Sparkles,
   'Process Building': Layers,
@@ -130,6 +131,7 @@ const tagIcons: Record<string, typeof Users> = {
 };
 
 const tagColors: Record<string, string> = {
+  'Second-Line Management': '#8B5CF6',
   'Team Leadership': '#8B5CF6',
   'AI Innovation': '#06B6D4',
   'Process Building': '#10B981',
@@ -157,7 +159,7 @@ export default function Experience() {
         >
           <h2 className="section-title">Professional Experience</h2>
           <p className="section-subtitle">
-            Building teams, driving growth, and transforming customer success across enterprise organizations
+            Building CS organizations, developing managers, and driving enterprise growth across the full customer lifecycle
           </p>
         </motion.div>
 

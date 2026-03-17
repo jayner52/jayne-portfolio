@@ -188,7 +188,7 @@ export default function Hero() {
               margin: '0 auto 1.5rem',
             }}
           >
-            Director of Account Management & Customer Success Strategy
+            Customer Success & Account Management Executive
           </motion.h2>
 
           <motion.p
@@ -203,9 +203,7 @@ export default function Hero() {
               lineHeight: 1.7,
             }}
           >
-            Building high-performing CS teams, driving enterprise expansion, and
-            pioneering AI-driven customer insights. A people-first leader with a
-            CPA foundation and a passion for innovation.
+            Building and leading high-performing CS organizations — from individual contributors to Team Leads and managers. A people-first executive with a CPA foundation, a track record of enterprise growth, and a hands-on approach to AI innovation.
           </motion.p>
 
           <motion.div
@@ -262,7 +260,7 @@ export default function Hero() {
               { value: '5x', label: "President's Club" },
               { value: '$30M', label: 'Portfolio Managed' },
               { value: '120%+', label: 'Quota Attainment' },
-              { value: '7', label: 'Team Scaled To' },
+              { value: '7', label: 'Managers Led' },
             ].map((stat, index) => (
               <div key={index} style={{ textAlign: 'center' }}>
                 <div style={{

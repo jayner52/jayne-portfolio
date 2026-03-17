@@ -7,7 +7,7 @@ const highlights = [
   {
     icon: Users,
     title: 'People-First Leadership',
-    description: 'Scaled and developed high-performing teams, fostering cultures of accountability, growth, and belonging.',
+    description: 'Developed managers and high-performing teams — including second-line experience coaching a Team Lead — fostering cultures of accountability and growth.',
   },
   {
     icon: TrendingUp,
@@ -40,7 +40,7 @@ export default function About() {
         >
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
-            A CS/AM leader who blends finance rigor with people-first leadership and hands-on AI experimentation
+            A CS executive who develops managers, drives enterprise growth, and builds AI-powered customer programs
           </p>
         </motion.div>
 
@@ -80,9 +80,7 @@ export default function About() {
               color: 'var(--color-text)',
               marginBottom: '1rem',
             }}>
-              I've led account management functions focused on retention and expansion, overseeing portfolios
-              of more than <strong>$30M in annual revenue</strong>. My approach combines data, strategy, and
-              empathy to help clients succeed and teams perform at their best.
+              I've led customer success and account management functions at the director level — managing managers, building out Team Leads, and overseeing a portfolio of more than <strong>$30M in annual revenue</strong>. My approach combines data, strategy, and empathy to help clients succeed and managers grow.
             </p>
             <p style={{
               fontSize: '1rem',
