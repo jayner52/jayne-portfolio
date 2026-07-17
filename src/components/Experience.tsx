@@ -70,7 +70,7 @@ const experiences: Company[] = [
         highlights: [
           'Built and led high-performing CS team managing enterprise relationships',
           'Developed vertical GTM motion across 7 industries with user groups and client communities',
-          'Exceeded $3M+ annual expansion targets with 100%+ attainment for 6+ consecutive years',
+          'Exceeded $3M+ annual expansion targets with 120%+ attainment for 6+ consecutive years',
         ],
       },
       {

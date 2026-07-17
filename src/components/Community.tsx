@@ -13,7 +13,7 @@ const activities = [
   {
     icon: Sparkles,
     title: 'Lovable SheBuilds Participant',
-    description: 'Selected as 1 of 200 participants from 2,000+ applicants for this women-in-tech AI building program.',
+    description: 'Selected as 1 of 200 participants from 2,000+ applicants for this women-in-tech AI building program — a direct catalyst for co-founding Gloo, now a Lovable Select Partner.',
     highlight: false,
   },
   {

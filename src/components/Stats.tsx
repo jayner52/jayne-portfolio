@@ -34,7 +34,7 @@ const stats = [
     suffix: 'M',
     prefix: '$',
     label: 'Annual Expansion',
-    description: '100%+ attainment for 6+ consecutive years',
+    description: '120%+ attainment for 6+ consecutive years',
   },
   {
     icon: Users,

@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { Sparkles, Briefcase, Tv, Globe, ExternalLink, Users, Wrench, Lock, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Sparkles, Briefcase, Tv, ExternalLink, Users, Wrench, Lock, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projects = [
   {
     icon: Wrench,
     title: 'Gloo',
-    description: 'A consulting-to-build studio creating custom software tools for go-to-market teams. Rapid 2-3 week delivery of workflow-aligned applications.',
+    description: 'A consulting-to-build studio and Lovable Select Partner, creating custom software tools for go-to-market teams. Rapid 2-3 week delivery of workflow-aligned applications.',
     status: 'Co-Founder',
     statusColor: '#10B981',
     highlights: [
+      'Lovable Select Partner — recognized in Lovable\'s top-tier partner network',
       'Custom tools for AM, CS, and RevOps teams',
       'Whitespace analyzers, health dashboards, renewal trackers',
       'Integrates with Salesforce, HubSpot, billing platforms',
-      'AI-powered automation with 89% adoption rates',
     ],
     link: 'https://buildwithgloo.com',
     password: null,
@@ -29,7 +29,7 @@ const projects = [
       'Presented to Vena C-Suite with positive reception',
       'Consolidates sales playbooks, competitive intel, and pricing tools',
       'AI-powered search and recommendation engine',
-      'Currently in procurement evaluation',
+      'Full GTM enablement in a single intelligent platform',
     ],
     link: 'https://strategic-spotlight-hub.lovable.app/',
     password: 'sweden',
@@ -62,21 +62,6 @@ const projects = [
       'Transforms viewing into interactive competition',
     ],
     link: 'https://poolside-picks.com/',
-    password: null,
-  },
-  {
-    icon: Globe,
-    title: 'Roamwyth',
-    description: 'A social travel platform connecting travelers for group trips and shared experiences.',
-    status: 'Live Project',
-    statusColor: '#8B5CF6',
-    highlights: [
-      'Full-stack web application',
-      'Group trip coordination and planning',
-      'Social features for traveler connections',
-      'Built to explore product development end-to-end',
-    ],
-    link: 'https://roamwyth.lovable.app',
     password: null,
   },
 ];
