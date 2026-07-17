@@ -19,13 +19,37 @@ const navLinks = [
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY;
+      const total = document.body.scrollHeight - window.innerHeight;
+      setProgress(total > 0 ? Math.min(100, (scrolled / total) * 100) : 0);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = navLinks.map(l => l.href.slice(1));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+    );
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -39,6 +63,21 @@ export default function Navigation() {
 
   return (
     <>
+      {/* Reading progress bar */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          height: '2px',
+          width: `${progress}%`,
+          background: 'var(--accent)',
+          zIndex: 1001,
+          transition: 'width 0.1s linear',
+          pointerEvents: 'none',
+        }}
+      />
+
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -70,9 +109,7 @@ export default function Navigation() {
               fontFamily: 'var(--font-serif)',
               fontSize: '1.5rem',
               fontWeight: 600,
-              background: 'var(--gradient-primary)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: 'var(--accent)',
             }}
           >
             JIR
@@ -84,51 +121,54 @@ export default function Navigation() {
             alignItems: 'center',
             gap: '1.25rem',
           }} className="desktop-nav">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                style={{
-                  fontSize: '0.9rem',
-                  fontWeight: 500,
-                  color: 'var(--color-text)',
-                  transition: 'color 0.2s ease',
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--color-text)'}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <a
-                href="https://linkedin.com/in/jayneingram"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  background: 'var(--color-bg-alt)',
-                  color: 'var(--color-text)',
-                  transition: 'all 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--color-primary)';
-                  e.currentTarget.style.color = 'white';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'var(--color-bg-alt)';
-                  e.currentTarget.style.color = 'var(--color-text)';
-                }}
-              >
-                <Linkedin size={18} />
-              </a>
-            </div>
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.slice(1);
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  style={{
+                    fontSize: '0.9rem',
+                    fontWeight: isActive ? 600 : 500,
+                    color: isActive ? 'var(--accent)' : 'var(--color-text)',
+                    transition: 'color 0.2s ease',
+                    borderBottom: isActive ? '2px solid var(--accent)' : '2px solid transparent',
+                    paddingBottom: '2px',
+                  }}
+                  onMouseEnter={(e) => { if (!isActive) e.currentTarget.style.color = 'var(--accent)'; }}
+                  onMouseLeave={(e) => { if (!isActive) e.currentTarget.style.color = 'var(--color-text)'; }}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+            <a
+              href="https://linkedin.com/in/jayneingram"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                background: 'var(--color-bg-alt)',
+                color: 'var(--color-text)',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--accent)';
+                e.currentTarget.style.color = 'white';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'var(--color-bg-alt)';
+                e.currentTarget.style.color = 'var(--color-text)';
+              }}
+            >
+              <Linkedin size={18} />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -158,7 +198,7 @@ export default function Navigation() {
             style={{
               position: 'fixed',
               inset: 0,
-              background: 'rgba(255, 255, 255, 0.98)',
+              background: 'rgba(243, 239, 230, 0.98)',
               zIndex: 999,
               display: 'flex',
               flexDirection: 'column',
@@ -175,24 +215,24 @@ export default function Navigation() {
                 onClick={(e) => handleNavClick(e, link.href)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 style={{
                   fontSize: '1.5rem',
-                  fontWeight: 500,
-                  color: 'var(--color-text)',
+                  fontWeight: activeSection === link.href.slice(1) ? 600 : 500,
+                  color: activeSection === link.href.slice(1) ? 'var(--accent)' : 'var(--color-text)',
                 }}
               >
                 {link.label}
               </motion.a>
             ))}
             <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-              <a href="https://linkedin.com/in/jayneingram" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/jayneingram" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text)' }}>
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:ingram.jayne@gmail.com">
+              <a href="mailto:ingram.jayne@gmail.com" style={{ color: 'var(--color-text)' }}>
                 <Mail size={24} />
               </a>
-              <a href="tel:647-920-5272">
+              <a href="tel:647-920-5272" style={{ color: 'var(--color-text)' }}>
                 <Phone size={24} />
               </a>
             </div>

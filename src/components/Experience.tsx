@@ -257,7 +257,7 @@ export default function Experience() {
                           borderRadius: '50%',
                           background: 'var(--color-primary)',
                           border: '2px solid white',
-                          boxShadow: '0 0 10px rgba(139, 92, 246, 0.5)',
+                          boxShadow: '0 0 8px rgba(122, 74, 40, 0.4)',
                         }}
                       />
                     )}
@@ -284,7 +284,7 @@ export default function Experience() {
                         gap: '0.25rem',
                         fontSize: '0.875rem',
                         color: role.isCurrent ? 'var(--color-primary)' : 'var(--color-text-light)',
-                        background: role.isCurrent ? 'rgba(139, 92, 246, 0.1)' : 'var(--color-bg-alt)',
+                        background: role.isCurrent ? 'var(--accent-soft)' : 'var(--color-bg-alt)',
                         padding: '0.25rem 0.75rem',
                         borderRadius: '1rem',
                         fontWeight: role.isCurrent ? 600 : 400,
@@ -312,7 +312,7 @@ export default function Experience() {
                               padding: '0.4rem 0.75rem',
                               background: 'var(--gradient-card)',
                               borderRadius: '2rem',
-                              border: '1px solid rgba(139, 92, 246, 0.2)',
+                              border: '1px solid var(--border)',
                             }}
                           >
                             <span style={{

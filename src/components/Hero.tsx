@@ -100,6 +100,40 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
+          {/* Open to Opportunities badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.4rem 0.875rem',
+              background: 'var(--accent-soft)',
+              border: '1px solid var(--border)',
+              borderRadius: '2rem',
+              fontSize: '0.8rem',
+              fontWeight: 500,
+              color: 'var(--accent)',
+              marginBottom: '0.75rem',
+            }}
+          >
+            <motion.span
+              animate={{ opacity: [1, 0.3, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                background: 'var(--accent)',
+                flexShrink: 0,
+                display: 'inline-block',
+              }}
+            />
+            Open to CS leadership roles
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
