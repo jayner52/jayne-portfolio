@@ -22,10 +22,10 @@ function App() {
         <Hero />
         <About />
         <Stats />
+        <AIProjects />
         <NextRole />
         <Experience />
         <ClientUserGroups />
-        <AIProjects />
         <Skills />
         <Certifications />
         <Education />

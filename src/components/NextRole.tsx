@@ -6,26 +6,26 @@ import { Compass, Sparkles, Users, TrendingUp, Lightbulb } from 'lucide-react';
 const pillars = [
   {
     icon: Sparkles,
-    title: 'AI-Forward Organization',
-    description: 'A company at the frontier of AI where I can help customers adopt transformative technology responsibly and successfully.',
+    title: 'AI-Native Company',
+    description: 'A company where AI isn\'t a feature — it\'s the foundation. I want to help shape how a new category of software gets adopted, loved, and scaled by real customers.',
     color: '#8B5CF6',
   },
   {
     icon: Users,
     title: 'People Leadership',
-    description: 'The opportunity to lead as a second-line manager — building and coaching managers, developing Team Leads, and scaling high-performing CS organizations.',
+    description: 'The space to build and develop a high-performing CS org — hiring, coaching managers, developing Team Leads — at a company moving fast enough that what you build today defines the culture tomorrow.',
     color: '#06B6D4',
   },
   {
     icon: TrendingUp,
-    title: 'Enterprise Impact',
-    description: 'Strategic accounts where I can drive meaningful expansion and retention outcomes at scale, with real influence on business results.',
+    title: 'Product-Led CS',
+    description: 'A seat at the table where customer insights directly shape the roadmap. CS as a growth engine, not a support function — where success is measured in outcomes, not tickets.',
     color: '#10B981',
   },
   {
     icon: Lightbulb,
-    title: 'Innovation Culture',
-    description: 'An environment that values experimentation, continuous learning, and building new things, where curiosity is celebrated.',
+    title: 'Builder Culture',
+    description: 'A team that respects people who ship things. I already build — live products, AI tools, customer communities. I\'m looking for a company where that instinct is a feature, not a footnote.',
     color: '#F59E0B',
   },
 ];
@@ -55,7 +55,7 @@ export default function NextRole() {
             <h2 className="section-title" style={{ marginBottom: 0 }}>What I'm Looking For</h2>
           </div>
           <p className="section-subtitle">
-            The qualities that define my ideal next opportunity
+            I'm not looking for any CS role — I'm looking for the right one.
           </p>
         </motion.div>
 
@@ -142,9 +142,9 @@ export default function NextRole() {
             margin: '0 auto',
             lineHeight: 1.7,
           }}>
-            I'm energized by the intersection of <strong>people leadership</strong> and <strong>technology innovation</strong>.
-            I want to be at a company where customer success isn't just a department - it's a strategic priority
-            that shapes the product, the culture, and the future. If that sounds like your organization,
+            I've co-founded a studio. I've built live products. I hosted a community of 90 women building with AI.
+            I'm not describing what I <em>want</em> to do at an AI company — I'm describing what I'm <strong>already doing</strong>.
+            Now I want to do it at scale, inside a company that's rewriting what's possible. If that sounds like yours,
             let's talk.
           </p>
         </motion.div>

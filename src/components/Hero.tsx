@@ -188,7 +188,7 @@ export default function Hero() {
               margin: '0 auto 1.5rem',
             }}
           >
-            Customer Success & Account Management Leader
+            CS Leader & AI Builder
           </motion.h2>
 
           <motion.p

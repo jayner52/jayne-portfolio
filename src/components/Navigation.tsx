@@ -5,10 +5,10 @@ import { Menu, X, Linkedin, Mail, Phone } from 'lucide-react';
 const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#stats', label: 'Impact' },
+  { href: '#ai-projects', label: 'AI Projects' },
   { href: '#next-role', label: 'Next Role' },
   { href: '#experience', label: 'Experience' },
   { href: '#user-groups', label: 'User Groups' },
-  { href: '#ai-projects', label: 'AI Projects' },
   { href: '#skills', label: 'Skills' },
   { href: '#certifications', label: 'Certifications' },
   { href: '#education', label: 'Education' },
