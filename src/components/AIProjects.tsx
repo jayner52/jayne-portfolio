@@ -9,7 +9,7 @@ const projects = [
     title: 'Gloo',
     description: 'A consulting-to-build studio and Lovable Select Partner, creating custom software tools for go-to-market teams. Rapid 2-3 week delivery of workflow-aligned applications.',
     status: 'Co-Founder',
-    statusColor: '#5A7A5E',
+    statusColor: '#8F4A26',
     highlights: [
       'Lovable Select Partner — recognized in Lovable\'s top-tier partner network',
       'Custom tools for AM, CS, and RevOps teams',

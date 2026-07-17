@@ -13,7 +13,7 @@ const skillCategories = [
       'Change Management',
       'Stakeholder Management',
     ],
-    color: '#8C6D4F',
+    chipBg: '#DEE4E6', chipInk: '#3F565F',
   },
   {
     title: 'Customer Success & Account Management',
@@ -25,7 +25,7 @@ const skillCategories = [
       'Churn Prevention',
       'Executive Relationships',
     ],
-    color: '#7B9E87',
+    chipBg: '#E4E8D9', chipInk: '#465440',
   },
   {
     title: 'Process & Operations',
@@ -37,7 +37,7 @@ const skillCategories = [
       'Data-Driven Decision Making',
       'GTM Strategy',
     ],
-    color: '#5A7A5E',
+    chipBg: '#E8E5CE', chipInk: '#56582C',
   },
   {
     title: 'Tools & Technology',
@@ -53,7 +53,7 @@ const skillCategories = [
       'Supabase',
       'Lovable',
     ],
-    color: '#B8895A',
+    chipBg: '#F0DFD1', chipInk: '#8F4A26',
   },
   {
     title: 'Finance & Analytics',
@@ -65,7 +65,7 @@ const skillCategories = [
       'Budgeting & Planning',
       'CPA, CA Designation',
     ],
-    color: '#B87460',
+    chipBg: '#F2E5C8', chipInk: '#806013',
   },
   {
     title: 'Communication & Enablement',
@@ -77,7 +77,7 @@ const skillCategories = [
       'Documentation',
       'Community Building',
     ],
-    color: '#6B7E9E',
+    chipBg: '#EDDED8', chipInk: '#8A4A40',
   },
 ];
 
@@ -122,7 +122,7 @@ export default function Skills() {
                 left: 0,
                 width: '4px',
                 height: '100%',
-                background: category.color,
+                background: category.chipInk,
               }} />
 
               <h3 style={{
@@ -151,11 +151,10 @@ export default function Skills() {
                     style={{
                       fontSize: '0.8rem',
                       padding: '0.375rem 0.75rem',
-                      background: `${category.color}10`,
-                      color: category.color,
-                      borderRadius: '0.5rem',
+                      background: category.chipBg,
+                      color: category.chipInk,
+                      borderRadius: 'var(--radius)',
                       fontWeight: 500,
-                      border: `1px solid ${category.color}30`,
                     }}
                   >
                     {skill}

@@ -49,7 +49,7 @@ export default function Navigation() {
           left: 0,
           right: 0,
           zIndex: 1000,
-          background: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+          background: isScrolled ? 'rgba(243, 239, 230, 0.97)' : 'transparent',
           backdropFilter: isScrolled ? 'blur(10px)' : 'none',
           boxShadow: isScrolled ? 'var(--shadow-md)' : 'none',
           transition: 'all 0.3s ease',

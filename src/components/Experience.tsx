@@ -130,19 +130,19 @@ const tagIcons: Record<string, typeof Users> = {
   "President's Club": Award,
 };
 
-const tagColors: Record<string, string> = {
-  'Second-Line Management': '#8C6D4F',
-  'Team Leadership': '#8C6D4F',
-  'AI Innovation': '#7B9E87',
-  'Process Building': '#5A7A5E',
-  'Enterprise Growth': '#B8895A',
-  'Cross-Functional': '#6B7E9E',
-  'Community Building': '#B87460',
-  'Enterprise Accounts': '#8C6D4F',
-  'Financial Planning': '#5A7A5E',
-  'Data Analytics': '#7B9E87',
-  'CPA, CA': '#B8895A',
-  'Multi-Industry': '#6B7E9E',
+const tagColors: Record<string, { bg: string; ink: string }> = {
+  'Second-Line Management': { bg: '#DEE4E6', ink: '#3F565F' },
+  'Team Leadership':        { bg: '#DEE4E6', ink: '#3F565F' },
+  'AI Innovation':          { bg: '#F0DFD1', ink: '#8F4A26' },
+  'Process Building':       { bg: '#E8E5CE', ink: '#56582C' },
+  'Enterprise Growth':      { bg: '#F2E5C8', ink: '#806013' },
+  'Cross-Functional':       { bg: '#E4E8D9', ink: '#465440' },
+  'Community Building':     { bg: '#EDDED8', ink: '#8A4A40' },
+  'Enterprise Accounts':    { bg: '#DEE4E6', ink: '#3F565F' },
+  'Financial Planning':     { bg: '#E8E5CE', ink: '#56582C' },
+  'Data Analytics':         { bg: '#F0DFD1', ink: '#8F4A26' },
+  'CPA, CA':                { bg: '#F2E5C8', ink: '#806013' },
+  'Multi-Industry':         { bg: '#E4E8D9', ink: '#465440' },
 };
 
 export default function Experience() {
@@ -341,7 +341,7 @@ export default function Experience() {
                       }}>
                         {role.tags.map((tag, tIndex) => {
                           const TagIcon = tagIcons[tag];
-                          const color = tagColors[tag] || '#6B7280';
+                          const tagColor = tagColors[tag] || { bg: '#E8E5CE', ink: '#56582C' };
                           return (
                             <span
                               key={tIndex}
@@ -352,10 +352,9 @@ export default function Experience() {
                                 fontSize: '0.7rem',
                                 fontWeight: 500,
                                 padding: '0.25rem 0.5rem',
-                                background: `${color}15`,
-                                color: color,
+                                background: tagColor.bg,
+                                color: tagColor.ink,
                                 borderRadius: '0.375rem',
-                                border: `1px solid ${color}30`,
                               }}
                             >
                               {TagIcon && <TagIcon size={12} />}

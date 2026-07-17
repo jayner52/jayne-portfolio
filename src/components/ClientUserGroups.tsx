@@ -4,13 +4,13 @@ import { useRef } from 'react';
 import { Users, MapPin, Building2, Home, Trophy, Hotel, Monitor, Factory, Heart } from 'lucide-react';
 
 const industries = [
-  { name: 'Banking', icon: Building2, color: '#8C6D4F' },
-  { name: 'Real Estate', icon: Home, color: '#7B9E87' },
-  { name: 'Sports', icon: Trophy, color: '#B8895A' },
-  { name: 'Hospitality', icon: Hotel, color: '#B87460' },
-  { name: 'SaaS', icon: Monitor, color: '#5A7A5E' },
-  { name: 'Manufacturing', icon: Factory, color: '#6B7E9E' },
-  { name: 'Not-for-Profit', icon: Heart, color: '#8C6D4F' },
+  { name: 'Banking',       icon: Building2, chipBg: '#DEE4E6', chipInk: '#3F565F' },
+  { name: 'Real Estate',   icon: Home,      chipBg: '#E4E8D9', chipInk: '#465440' },
+  { name: 'Sports',        icon: Trophy,    chipBg: '#F0DFD1', chipInk: '#8F4A26' },
+  { name: 'Hospitality',   icon: Hotel,     chipBg: '#EDDED8', chipInk: '#8A4A40' },
+  { name: 'SaaS',          icon: Monitor,   chipBg: '#E8E5CE', chipInk: '#56582C' },
+  { name: 'Manufacturing', icon: Factory,   chipBg: '#F2E5C8', chipInk: '#806013' },
+  { name: 'Not-for-Profit',icon: Heart,     chipBg: '#E4E8D9', chipInk: '#465440' },
 ];
 
 const cities = ['New York City', 'Dallas', 'Las Vegas', 'Austin'];
@@ -112,7 +112,7 @@ export default function ClientUserGroups() {
                 padding: '1.25rem 1rem',
                 textAlign: 'center',
                 boxShadow: 'var(--shadow-md)',
-                border: `2px solid ${industry.color}20`,
+                border: `1px solid ${industry.chipBg}`,
                 cursor: 'default',
               }}
             >
@@ -120,12 +120,12 @@ export default function ClientUserGroups() {
                 width: '48px',
                 height: '48px',
                 borderRadius: '12px',
-                background: `${industry.color}15`,
+                background: industry.chipBg,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '0 auto 0.75rem',
-                color: industry.color,
+                color: industry.chipInk,
               }}>
                 <industry.icon size={24} />
               </div>

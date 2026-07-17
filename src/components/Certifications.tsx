@@ -62,13 +62,13 @@ const certifications = [
   },
 ];
 
-const categoryColors: Record<string, string> = {
-  Professional: '#8C6D4F',
-  Achievement: '#B8895A',
-  Leadership: '#7B9E87',
-  Communication: '#5A7A5E',
-  Wellness: '#B87460',
-  Sales: '#6B7E9E',
+const categoryColors: Record<string, { bg: string; ink: string }> = {
+  Professional:  { bg: '#F2E5C8', ink: '#806013' },
+  Achievement:   { bg: '#F0DFD1', ink: '#8F4A26' },
+  Leadership:    { bg: '#DEE4E6', ink: '#3F565F' },
+  Communication: { bg: '#EDDED8', ink: '#8A4A40' },
+  Wellness:      { bg: '#E4E8D9', ink: '#465440' },
+  Sales:         { bg: '#E8E5CE', ink: '#56582C' },
 };
 
 export default function Certifications() {
@@ -94,7 +94,9 @@ export default function Certifications() {
           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
           gap: '1rem',
         }}>
-          {certifications.map((cert, index) => (
+          {certifications.map((cert, index) => {
+            const chipColor = categoryColors[cert.category] || { bg: '#E8E5CE', ink: '#56582C' };
+            return (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -112,11 +114,11 @@ export default function Certifications() {
                 width: '44px',
                 height: '44px',
                 borderRadius: '10px',
-                background: `${categoryColors[cert.category]}15`,
+                background: chipColor.bg,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: categoryColors[cert.category],
+                color: chipColor.ink,
                 flexShrink: 0,
               }}>
                 <cert.icon size={22} />
@@ -133,7 +135,7 @@ export default function Certifications() {
                 </h3>
                 <p style={{
                   fontSize: '0.8rem',
-                  color: categoryColors[cert.category],
+                  color: chipColor.ink,
                   fontWeight: 500,
                   marginBottom: '0.25rem',
                 }}>
@@ -147,7 +149,8 @@ export default function Certifications() {
                 </p>
               </div>
             </motion.div>
-          ))}
+          );
+          })}
         </div>
       </div>
     </section>

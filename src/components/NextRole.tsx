@@ -8,25 +8,25 @@ const pillars = [
     icon: Sparkles,
     title: 'AI-Native Company',
     description: 'A company where AI isn\'t a feature — it\'s the foundation. I want to help shape how a new category of software gets adopted, loved, and scaled by real customers.',
-    color: '#8C6D4F',
+    chipBg: '#F0DFD1', chipInk: '#8F4A26',
   },
   {
     icon: Users,
     title: 'People Leadership',
     description: 'The space to build and develop a high-performing CS org — hiring, coaching managers, developing Team Leads — at a company moving fast enough that what you build today defines the culture tomorrow.',
-    color: '#7B9E87',
+    chipBg: '#DEE4E6', chipInk: '#3F565F',
   },
   {
     icon: TrendingUp,
     title: 'Product-Led CS',
     description: 'A seat at the table where customer insights directly shape the roadmap. CS as a growth engine, not a support function — where success is measured in outcomes, not tickets.',
-    color: '#5A7A5E',
+    chipBg: '#E4E8D9', chipInk: '#465440',
   },
   {
     icon: Lightbulb,
     title: 'Builder Culture',
     description: 'A team that respects people who ship things. I already build — live products, AI tools, customer communities. I\'m looking for a company where that instinct is a feature, not a footnote.',
-    color: '#B8895A',
+    chipBg: '#F2E5C8', chipInk: '#806013',
   },
 ];
 
@@ -84,19 +84,19 @@ export default function NextRole() {
                 left: 0,
                 right: 0,
                 height: '4px',
-                background: pillar.color,
+                background: pillar.chipInk,
               }} />
 
               <div style={{
                 width: '56px',
                 height: '56px',
                 borderRadius: '14px',
-                background: `${pillar.color}15`,
+                background: pillar.chipBg,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginBottom: '1rem',
-                color: pillar.color,
+                color: pillar.chipInk,
               }}>
                 <pillar.icon size={28} />
               </div>
