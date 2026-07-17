@@ -67,6 +67,7 @@ export default function Hero() {
                   borderRadius: '50%',
                   objectFit: 'cover',
                   border: '4px solid white',
+                  filter: 'grayscale(1) contrast(1.05)',
                 }}
               />
             </motion.div>
