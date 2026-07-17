@@ -63,12 +63,12 @@ const certifications = [
 ];
 
 const categoryColors: Record<string, string> = {
-  Professional: '#8B5CF6',
-  Achievement: '#F59E0B',
-  Leadership: '#06B6D4',
-  Communication: '#10B981',
-  Wellness: '#EC4899',
-  Sales: '#6366F1',
+  Professional: '#8C6D4F',
+  Achievement: '#B8895A',
+  Leadership: '#7B9E87',
+  Communication: '#5A7A5E',
+  Wellness: '#B87460',
+  Sales: '#6B7E9E',
 };
 
 export default function Certifications() {

@@ -26,27 +26,6 @@ export default function Hero() {
         paddingTop: '5rem',
       }}
     >
-      {/* Decorative elements */}
-      <div style={{
-        position: 'absolute',
-        top: '10%',
-        left: '5%',
-        width: '300px',
-        height: '300px',
-        borderRadius: '50%',
-        background: 'rgba(139, 92, 246, 0.1)',
-        filter: 'blur(60px)',
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '15%',
-        right: '10%',
-        width: '400px',
-        height: '400px',
-        borderRadius: '50%',
-        background: 'rgba(6, 182, 212, 0.1)',
-        filter: 'blur(80px)',
-      }} />
 
       <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <motion.div
@@ -70,7 +49,7 @@ export default function Hero() {
                 margin: '0 auto 1.5rem',
                 padding: '6px',
                 background: 'var(--gradient-primary)',
-                boxShadow: '0 0 60px rgba(139, 92, 246, 0.3), 0 0 120px rgba(6, 182, 212, 0.15)',
+                boxShadow: '0 8px 32px rgba(42, 37, 32, 0.14)',
                 cursor: 'pointer',
               }}
             >

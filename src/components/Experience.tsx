@@ -131,18 +131,18 @@ const tagIcons: Record<string, typeof Users> = {
 };
 
 const tagColors: Record<string, string> = {
-  'Second-Line Management': '#8B5CF6',
-  'Team Leadership': '#8B5CF6',
-  'AI Innovation': '#06B6D4',
-  'Process Building': '#10B981',
-  'Enterprise Growth': '#F59E0B',
-  'Cross-Functional': '#6366F1',
-  'Community Building': '#EC4899',
-  'Enterprise Accounts': '#8B5CF6',
-  'Financial Planning': '#10B981',
-  'Data Analytics': '#06B6D4',
-  'CPA, CA': '#F59E0B',
-  'Multi-Industry': '#6366F1',
+  'Second-Line Management': '#8C6D4F',
+  'Team Leadership': '#8C6D4F',
+  'AI Innovation': '#7B9E87',
+  'Process Building': '#5A7A5E',
+  'Enterprise Growth': '#B8895A',
+  'Cross-Functional': '#6B7E9E',
+  'Community Building': '#B87460',
+  'Enterprise Accounts': '#8C6D4F',
+  'Financial Planning': '#5A7A5E',
+  'Data Analytics': '#7B9E87',
+  'CPA, CA': '#B8895A',
+  'Multi-Industry': '#6B7E9E',
 };
 
 export default function Experience() {

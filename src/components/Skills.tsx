@@ -13,7 +13,7 @@ const skillCategories = [
       'Change Management',
       'Stakeholder Management',
     ],
-    color: '#8B5CF6',
+    color: '#8C6D4F',
   },
   {
     title: 'Customer Success & Account Management',
@@ -25,7 +25,7 @@ const skillCategories = [
       'Churn Prevention',
       'Executive Relationships',
     ],
-    color: '#06B6D4',
+    color: '#7B9E87',
   },
   {
     title: 'Process & Operations',
@@ -37,7 +37,7 @@ const skillCategories = [
       'Data-Driven Decision Making',
       'GTM Strategy',
     ],
-    color: '#10B981',
+    color: '#5A7A5E',
   },
   {
     title: 'Tools & Technology',
@@ -53,7 +53,7 @@ const skillCategories = [
       'Supabase',
       'Lovable',
     ],
-    color: '#F59E0B',
+    color: '#B8895A',
   },
   {
     title: 'Finance & Analytics',
@@ -65,7 +65,7 @@ const skillCategories = [
       'Budgeting & Planning',
       'CPA, CA Designation',
     ],
-    color: '#EC4899',
+    color: '#B87460',
   },
   {
     title: 'Communication & Enablement',
@@ -77,7 +77,7 @@ const skillCategories = [
       'Documentation',
       'Community Building',
     ],
-    color: '#6366F1',
+    color: '#6B7E9E',
   },
 ];
 

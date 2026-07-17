@@ -39,7 +39,7 @@ export default function FloatingCTA() {
             borderRadius: '2rem',
             fontWeight: 500,
             fontSize: '0.875rem',
-            boxShadow: '0 4px 20px rgba(139, 92, 246, 0.4)',
+            boxShadow: '0 4px 20px rgba(42, 37, 32, 0.18)',
             cursor: 'pointer',
             textDecoration: 'none',
           }}

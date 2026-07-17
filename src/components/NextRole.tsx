@@ -8,25 +8,25 @@ const pillars = [
     icon: Sparkles,
     title: 'AI-Native Company',
     description: 'A company where AI isn\'t a feature — it\'s the foundation. I want to help shape how a new category of software gets adopted, loved, and scaled by real customers.',
-    color: '#8B5CF6',
+    color: '#8C6D4F',
   },
   {
     icon: Users,
     title: 'People Leadership',
     description: 'The space to build and develop a high-performing CS org — hiring, coaching managers, developing Team Leads — at a company moving fast enough that what you build today defines the culture tomorrow.',
-    color: '#06B6D4',
+    color: '#7B9E87',
   },
   {
     icon: TrendingUp,
     title: 'Product-Led CS',
     description: 'A seat at the table where customer insights directly shape the roadmap. CS as a growth engine, not a support function — where success is measured in outcomes, not tickets.',
-    color: '#10B981',
+    color: '#5A7A5E',
   },
   {
     icon: Lightbulb,
     title: 'Builder Culture',
     description: 'A team that respects people who ship things. I already build — live products, AI tools, customer communities. I\'m looking for a company where that instinct is a feature, not a footnote.',
-    color: '#F59E0B',
+    color: '#B8895A',
   },
 ];
 

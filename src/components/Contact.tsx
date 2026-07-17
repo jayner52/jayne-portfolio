@@ -40,27 +40,6 @@ export default function Contact() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Decorative elements */}
-      <div style={{
-        position: 'absolute',
-        top: '20%',
-        right: '5%',
-        width: '300px',
-        height: '300px',
-        borderRadius: '50%',
-        background: 'rgba(139, 92, 246, 0.1)',
-        filter: 'blur(60px)',
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '10%',
-        left: '10%',
-        width: '250px',
-        height: '250px',
-        borderRadius: '50%',
-        background: 'rgba(6, 182, 212, 0.1)',
-        filter: 'blur(50px)',
-      }} />
 
       <div className="container" ref={ref} style={{ position: 'relative', zIndex: 1 }}>
         <motion.div

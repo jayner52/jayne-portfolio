@@ -4,13 +4,13 @@ import { useRef } from 'react';
 import { Users, MapPin, Building2, Home, Trophy, Hotel, Monitor, Factory, Heart } from 'lucide-react';
 
 const industries = [
-  { name: 'Banking', icon: Building2, color: '#8B5CF6' },
-  { name: 'Real Estate', icon: Home, color: '#06B6D4' },
-  { name: 'Sports', icon: Trophy, color: '#F59E0B' },
-  { name: 'Hospitality', icon: Hotel, color: '#EC4899' },
-  { name: 'SaaS', icon: Monitor, color: '#10B981' },
-  { name: 'Manufacturing', icon: Factory, color: '#6366F1' },
-  { name: 'Not-for-Profit', icon: Heart, color: '#EF4444' },
+  { name: 'Banking', icon: Building2, color: '#8C6D4F' },
+  { name: 'Real Estate', icon: Home, color: '#7B9E87' },
+  { name: 'Sports', icon: Trophy, color: '#B8895A' },
+  { name: 'Hospitality', icon: Hotel, color: '#B87460' },
+  { name: 'SaaS', icon: Monitor, color: '#5A7A5E' },
+  { name: 'Manufacturing', icon: Factory, color: '#6B7E9E' },
+  { name: 'Not-for-Profit', icon: Heart, color: '#8C6D4F' },
 ];
 
 const cities = ['New York City', 'Dallas', 'Las Vegas', 'Austin'];

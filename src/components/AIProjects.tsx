@@ -9,7 +9,7 @@ const projects = [
     title: 'Gloo',
     description: 'A consulting-to-build studio and Lovable Select Partner, creating custom software tools for go-to-market teams. Rapid 2-3 week delivery of workflow-aligned applications.',
     status: 'Co-Founder',
-    statusColor: '#10B981',
+    statusColor: '#5A7A5E',
     highlights: [
       'Lovable Select Partner — recognized in Lovable\'s top-tier partner network',
       'Custom tools for AM, CS, and RevOps teams',
@@ -24,7 +24,7 @@ const projects = [
     title: 'Go-To-Market Toolbox',
     description: 'AI-driven enablement prototype unifying GTM tools, frameworks, and templates into a single intelligent platform.',
     status: 'Enterprise GTM Tooling',
-    statusColor: '#F59E0B',
+    statusColor: '#B8895A',
     highlights: [
       'Presented to Vena C-Suite with positive reception',
       'Consolidates sales playbooks, competitive intel, and pricing tools',
@@ -40,7 +40,7 @@ const projects = [
     title: 'seatbee',
     description: 'AI-powered seating arrangement tool that intelligently optimizes event seating plans based on relationships, preferences, and constraints.',
     status: 'Live Project',
-    statusColor: '#8B5CF6',
+    statusColor: '#8C6D4F',
     highlights: [
       'AI algorithms for optimal guest placement',
       'Considers relationships and social dynamics',
@@ -56,7 +56,7 @@ const projects = [
     title: 'Poolside Picks',
     description: 'Free fantasy league platform for Big Brother fans. Draft houseguests, earn points, and compete with friends in customizable reality TV pools.',
     status: 'Live Project',
-    statusColor: '#8B5CF6',
+    statusColor: '#8C6D4F',
     highlights: [
       'Fantasy drafting of Big Brother houseguests',
       'Point-based scoring throughout the season',
