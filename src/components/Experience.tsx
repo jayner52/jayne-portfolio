@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Building2, Calendar, ChevronRight, Users, Sparkles, Layers, TrendingUp, Award } from 'lucide-react';
+import RevealText from './RevealText';
 
 interface KeyMetric {
   value: string;
@@ -68,7 +69,7 @@ const experiences: Company[] = [
         ],
         tags: ['Team Leadership', 'Enterprise Growth', 'Community Building'],
         highlights: [
-          'Built and led high-performing CS team managing enterprise relationships',
+          'Built and led high-performing Customer Success team managing enterprise relationships',
           'Developed vertical GTM motion across 7 industries with user groups and client communities',
           'Exceeded $3M+ annual expansion targets with 120%+ attainment for 6+ consecutive years',
         ],
@@ -152,19 +153,19 @@ export default function Experience() {
   return (
     <section id="experience" className="section" style={{ background: 'var(--color-bg)' }}>
       <div className="container" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">Professional Experience</h2>
-          <p className="section-subtitle">
-            Building CS organizations, developing managers, and driving enterprise growth across the full customer lifecycle
-          </p>
-        </motion.div>
+        <div>
+          <RevealText className="section-title">Professional Experience</RevealText>
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 8 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            Building Customer Success organizations, developing managers, and driving enterprise growth across the full customer lifecycle
+          </motion.p>
+        </div>
 
         <div style={{ position: 'relative' }}>
-          {/* Timeline line - visible on desktop */}
           <div
             className="timeline-line"
             style={{
@@ -186,12 +187,7 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: companyIndex * 0.2 }}
               style={{ marginBottom: '2.5rem', position: 'relative' }}
             >
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                marginBottom: '1rem',
-              }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{
                   width: '50px',
                   height: '50px',
@@ -208,28 +204,16 @@ export default function Experience() {
                   <Building2 size={24} />
                 </div>
                 <div>
-                  <h3 style={{
-                    fontSize: '1.5rem',
-                    fontWeight: 600,
-                    color: 'var(--color-text)',
-                  }}>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--color-text)' }}>
                     {company.company}
                   </h3>
-                  <p style={{
-                    fontSize: '0.875rem',
-                    color: 'var(--color-text-light)',
-                  }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)' }}>
                     {company.location}
                   </p>
                 </div>
               </div>
 
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1rem',
-                paddingLeft: '0',
-              }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', paddingLeft: '0' }}>
                 {company.roles.map((role, roleIndex) => (
                   <motion.div
                     key={roleIndex}
@@ -243,7 +227,6 @@ export default function Experience() {
                       position: 'relative',
                     }}
                   >
-                    {/* Current role indicator */}
                     {role.isCurrent && (
                       <motion.div
                         animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
@@ -262,20 +245,8 @@ export default function Experience() {
                       />
                     )}
 
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'flex-start',
-                      flexWrap: 'wrap',
-                      gap: '0.5rem',
-                      marginBottom: '0.75rem',
-                    }}>
-                      <h4 style={{
-                        fontSize: '1.125rem',
-                        fontWeight: 600,
-                        color: 'var(--color-text)',
-                        fontFamily: 'var(--font-sans)',
-                      }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                      <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--color-text)', fontFamily: 'var(--font-sans)' }}>
                         {role.title}
                       </h4>
                       <span style={{
@@ -294,14 +265,8 @@ export default function Experience() {
                       </span>
                     </div>
 
-                    {/* Key Metrics */}
                     {role.keyMetrics && role.keyMetrics.length > 0 && (
-                      <div style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: '0.75rem',
-                        marginBottom: '0.75rem',
-                      }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.75rem' }}>
                         {role.keyMetrics.map((metric, mIndex) => (
                           <div
                             key={mIndex}
@@ -315,30 +280,17 @@ export default function Experience() {
                               border: '1px solid var(--border)',
                             }}
                           >
-                            <span style={{
-                              fontWeight: 700,
-                              fontSize: '0.95rem',
-                              background: 'var(--gradient-primary)',
-                              WebkitBackgroundClip: 'text',
-                              WebkitTextFillColor: 'transparent',
-                            }}>{metric.value}</span>
-                            <span style={{
-                              fontSize: '0.75rem',
-                              color: 'var(--color-text-light)',
-                            }}>{metric.label}</span>
+                            <span style={{ fontWeight: 700, fontSize: '0.95rem', background: 'var(--gradient-primary)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                              {metric.value}
+                            </span>
+                            <span style={{ fontSize: '0.75rem', color: 'var(--color-text-light)' }}>{metric.label}</span>
                           </div>
                         ))}
                       </div>
                     )}
 
-                    {/* Tags */}
                     {role.tags && role.tags.length > 0 && (
-                      <div style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: '0.5rem',
-                        marginBottom: '0.75rem',
-                      }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
                         {role.tags.map((tag, tIndex) => {
                           const TagIcon = tagIcons[tag];
                           const tagColor = tagColors[tag] || { bg: '#E8E5CE', ink: '#56582C' };
@@ -365,25 +317,11 @@ export default function Experience() {
                       </div>
                     )}
 
-                    <ul style={{
-                      listStyle: 'none',
-                      padding: 0,
-                      margin: 0,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0.4rem',
-                    }}>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                       {role.highlights.map((highlight, highlightIndex) => (
                         <li
                           key={highlightIndex}
-                          style={{
-                            display: 'flex',
-                            alignItems: 'flex-start',
-                            gap: '0.5rem',
-                            fontSize: '0.875rem',
-                            color: 'var(--color-text-light)',
-                            lineHeight: 1.5,
-                          }}
+                          style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.875rem', color: 'var(--color-text-light)', lineHeight: 1.5 }}
                         >
                           <ChevronRight size={14} style={{ color: 'var(--color-primary)', flexShrink: 0, marginTop: '4px' }} />
                           {highlight}

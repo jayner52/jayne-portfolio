@@ -173,7 +173,7 @@ export default function Hero() {
               margin: '0 auto 1.5rem',
             }}
           >
-            CS Leader & AI Builder
+            Customer Success & Account Management · AI Builder
           </motion.h2>
 
           <motion.p
@@ -188,7 +188,7 @@ export default function Hero() {
               lineHeight: 1.7,
             }}
           >
-            I build high-performing CS teams and I build actual AI products. Second-line CS leader with a $30M portfolio, co-founder of a Lovable Select Partner studio, and someone who ships things — not just talks about them.
+            I build high-performing Customer Success and Account Management teams and I build actual AI products. Second-line leader with a $30M portfolio, co-founder of a Lovable Select Partner studio, and someone who ships things — not just talks about them.
           </motion.p>
 
           <motion.div

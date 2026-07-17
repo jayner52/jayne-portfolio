@@ -2,10 +2,26 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Sparkles, Briefcase, Tv, ExternalLink, Users, Wrench, Lock, ChevronLeft, ChevronRight } from 'lucide-react';
+import RevealText from './RevealText';
 
-const projects = [
+interface Project {
+  icon: typeof Wrench;
+  logo?: string;
+  lovableBadge?: boolean;
+  title: string;
+  description: string;
+  status: string;
+  statusColor: string;
+  highlights: string[];
+  link: string;
+  password: string | null;
+}
+
+const projects: Project[] = [
   {
     icon: Wrench,
+    logo: '/logos/gloo.png',
+    lovableBadge: true,
     title: 'Gloo',
     description: 'A consulting-to-build studio and Lovable Select Partner, creating custom software tools for go-to-market teams. Rapid 2-3 week delivery of workflow-aligned applications.',
     status: 'Co-Founder',
@@ -91,19 +107,26 @@ export default function AIProjects() {
     <section id="ai-projects" className="section" style={{ background: 'var(--color-white)' }}>
       <div className="container" ref={ref}>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-            <Sparkles size={32} style={{ color: 'var(--color-primary)' }} />
-            <h2 className="section-title" style={{ marginBottom: 0 }}>AI & Creative Projects</h2>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Sparkles size={32} style={{ color: 'var(--color-primary)' }} />
+            </motion.span>
+            <RevealText className="section-title" style={{ marginBottom: 0 }}>AI & Creative Projects</RevealText>
           </div>
-          <p className="section-subtitle">
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 8 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             I don't just talk about AI innovation - I build. Here's what I've been creating.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Carousel wrapper */}
         <motion.div
@@ -123,57 +146,75 @@ export default function AIProjects() {
             className="card"
             style={{ maxWidth: '720px', margin: '0 auto', overflow: 'hidden', position: 'relative' }}
           >
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--gradient-primary)' }}></div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-                <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--gradient-card)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', overflow: 'hidden' }}>
-                  {(project as any).logo
-                    ? <img src={(project as any).logo} alt={project.title} style={{ width: '42px', height: '42px', objectFit: 'contain' }} />
-                    : <project.icon size={26} />
-                  }
-                </div>
-                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: project.statusColor, background: `${project.statusColor}15`, padding: '0.3rem 0.85rem', borderRadius: '1rem' }}>
-                  {project.status}
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--gradient-primary)' }} />
+            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--gradient-card)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', overflow: 'hidden' }}>
+                {project.logo
+                  ? <img src={project.logo} alt={project.title} style={{ width: '42px', height: '42px', objectFit: 'contain' }} />
+                  : <project.icon size={26} />
+                }
+              </div>
+              <span style={{ fontSize: '0.8rem', fontWeight: 600, color: project.statusColor, background: `${project.statusColor}15`, padding: '0.3rem 0.85rem', borderRadius: '1rem' }}>
+                {project.status}
+              </span>
+            </div>
+
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.5rem', fontFamily: 'var(--font-sans)' }}>
+              {project.title}
+            </h3>
+
+            {project.lovableBadge && (
+              <div style={{ marginBottom: '0.75rem' }}>
+                <span style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.375rem',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  color: '#BE3B6E',
+                  background: '#FEF1F6',
+                  border: '1px solid #F2C4D6',
+                  padding: '0.25rem 0.75rem',
+                  borderRadius: '1rem',
+                }}>
+                  ♥ Lovable Select Partner
                 </span>
               </div>
+            )}
 
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.75rem', fontFamily: 'var(--font-sans)' }}>
-                {project.title}
-              </h3>
+            <p style={{ fontSize: '0.95rem', color: 'var(--color-text-light)', marginBottom: '1.25rem', lineHeight: 1.65 }}>
+              {project.description}
+            </p>
 
-              <p style={{ fontSize: '0.95rem', color: 'var(--color-text-light)', marginBottom: '1.25rem', lineHeight: 1.65 }}>
-                {project.description}
-              </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.4rem' }}>
+              {project.highlights.map((highlight, hIndex) => (
+                <li key={hIndex} style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                  <span style={{ color: 'var(--color-primary)', flexShrink: 0 }}>•</span>
+                  {highlight}
+                </li>
+              ))}
+            </ul>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.4rem' }}>
-                {project.highlights.map((highlight, hIndex) => (
-                  <li key={hIndex} style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <span style={{ color: 'var(--color-primary)', flexShrink: 0 }}>•</span>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-
-              {project.link && (
-                <div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--color-primary)' }}
-                  >
-                    View Project <ExternalLink size={14} />
-                  </a>
-                  {project.password && (
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.7rem', color: 'var(--color-text-lighter)', marginTop: '0.25rem' }}>
-                      <Lock size={10} />
-                      pw: {project.password}
-                    </span>
-                  )}
-                </div>
-              )}
+            {project.link && (
+              <div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--color-primary)' }}
+                >
+                  View Project <ExternalLink size={14} />
+                </a>
+                {project.password && (
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.7rem', color: 'var(--color-text-lighter)', marginTop: '0.25rem' }}>
+                    <Lock size={10} />
+                    pw: {project.password}
+                  </span>
+                )}
+              </div>
+            )}
           </motion.div>
 
-          {/* Prev button */}
           <button
             onClick={prev}
             aria-label="Previous project"
@@ -184,7 +225,6 @@ export default function AIProjects() {
             <ChevronLeft size={20} />
           </button>
 
-          {/* Next button */}
           <button
             onClick={next}
             aria-label="Next project"
@@ -196,7 +236,6 @@ export default function AIProjects() {
           </button>
         </motion.div>
 
-        {/* Dots */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem', marginTop: '1.5rem' }}>
           {projects.map((_, index) => (
             <button

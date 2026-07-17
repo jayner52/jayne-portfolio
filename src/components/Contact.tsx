@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Send, Copy, Check } from 'lucide-react';
+import RevealText from './RevealText';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -29,17 +30,18 @@ export default function Contact() {
     }}>
 
       <div className="container" ref={ref} style={{ position: 'relative', zIndex: 1 }}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">Let's Connect</h2>
-          <p className="section-subtitle">
-            Interested in discussing customer success leadership, AI innovation, or potential opportunities?
+        <div>
+          <RevealText className="section-title">Let's Connect</RevealText>
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 8 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            Interested in discussing Customer Success leadership, AI innovation, or potential opportunities?
             I'd love to hear from you.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         <div style={{
           display: 'grid',
@@ -320,7 +322,7 @@ export default function Contact() {
             margin: '2rem auto 0',
             lineHeight: 1.6,
           }}>
-            <strong>Open to CS leadership roles at AI-native companies</strong> building something
+            <strong>Open to Customer Success and Account Management leadership roles at AI-native companies</strong> building something
             that matters. I bring a builder's instinct, a second-line leadership track record,
             and a genuine obsession with making customers successful. If you're building the future, let's talk.
           </p>

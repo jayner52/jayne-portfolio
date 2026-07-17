@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Users, MapPin, Building2, Home, Trophy, Hotel, Monitor, Factory, Heart } from 'lucide-react';
+import RevealText from './RevealText';
 
 const industries = [
   { name: 'Banking',       icon: Building2, chipBg: '#DEE4E6', chipInk: '#3F565F' },
@@ -31,25 +32,26 @@ export default function ClientUserGroups() {
   return (
     <section id="user-groups" className="section" style={{ background: 'var(--color-white)' }}>
       <div className="container" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.75rem',
-            marginBottom: '1rem',
-          }}>
-            <Users size={32} style={{ color: 'var(--color-primary)' }} />
-            <h2 className="section-title" style={{ marginBottom: 0 }}>Client User Groups</h2>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Users size={32} style={{ color: 'var(--color-primary)' }} />
+            </motion.span>
+            <RevealText className="section-title" style={{ marginBottom: 0 }}>Client User Groups</RevealText>
           </div>
-          <p className="section-subtitle">
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 8 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             7 industry communities I've launched and lead across North America
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Summary Stats */}
         <motion.div

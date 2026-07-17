@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Sparkles, Users, Heart, Bike, Code } from 'lucide-react';
+import RevealText from './RevealText';
 
 const activities = [
   {
@@ -49,66 +50,45 @@ export default function Community() {
   return (
     <section id="community" className="section" style={{ background: 'var(--color-white)' }}>
       <div className="container" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="section-title">Community & Leadership</h2>
-          <p className="section-subtitle">
+        <div>
+          <RevealText className="section-title">Community & Leadership</RevealText>
+          <motion.p
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 8 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             Building connections, advocating for wellness, and giving back beyond the day job
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1rem',
-        }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
           {activities.map((activity, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.06, ease: [0.33, 1, 0.68, 1] }}
               className="card"
               style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '1rem',
-                padding: '1.5rem',
+                display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem',
                 background: activity.highlight ? 'var(--gradient-card)' : 'var(--color-white)',
                 border: activity.highlight ? '2px solid var(--color-primary)' : '1px solid var(--color-border)',
               }}
             >
               <div style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '12px',
+                width: '48px', height: '48px', borderRadius: '12px',
                 background: activity.highlight ? 'var(--gradient-primary)' : 'var(--color-bg-alt)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: activity.highlight ? 'white' : 'var(--color-primary)',
-                flexShrink: 0,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: activity.highlight ? 'white' : 'var(--color-primary)', flexShrink: 0,
               }}>
                 <activity.icon size={24} />
               </div>
               <div>
-                <h3 style={{
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  color: 'var(--color-text)',
-                  marginBottom: '0.5rem',
-                  fontFamily: 'var(--font-sans)',
-                }}>
+                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.5rem', fontFamily: 'var(--font-sans)' }}>
                   {activity.title}
                 </h3>
-                <p style={{
-                  fontSize: '0.875rem',
-                  color: 'var(--color-text-light)',
-                  lineHeight: 1.6,
-                }}>
+                <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', lineHeight: 1.6 }}>
                   {activity.description}
                 </p>
               </div>
