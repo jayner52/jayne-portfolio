@@ -36,6 +36,7 @@ const projects = [
   },
   {
     icon: Users,
+    logo: '/logos/seatbee.png',
     title: 'seatbee',
     description: 'AI-powered seating arrangement tool that intelligently optimizes event seating plans based on relationships, preferences, and constraints.',
     status: 'Live Project',
@@ -51,6 +52,7 @@ const projects = [
   },
   {
     icon: Tv,
+    logo: '/logos/poolside-picks.png',
     title: 'Poolside Picks',
     description: 'Free fantasy league platform for Big Brother fans. Draft houseguests, earn points, and compete with friends in customizable reality TV pools.',
     status: 'Live Project',
@@ -123,8 +125,11 @@ export default function AIProjects() {
           >
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--gradient-primary)' }}></div>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-                <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--gradient-card)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)' }}>
-                  <project.icon size={26} />
+                <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--gradient-card)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', overflow: 'hidden' }}>
+                  {(project as any).logo
+                    ? <img src={(project as any).logo} alt={project.title} style={{ width: '42px', height: '42px', objectFit: 'contain' }} />
+                    : <project.icon size={26} />
+                  }
                 </div>
                 <span style={{ fontSize: '0.8rem', fontWeight: 600, color: project.statusColor, background: `${project.statusColor}15`, padding: '0.3rem 0.85rem', borderRadius: '1rem' }}>
                   {project.status}

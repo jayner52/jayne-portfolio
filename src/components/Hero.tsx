@@ -203,7 +203,7 @@ export default function Hero() {
               lineHeight: 1.7,
             }}
           >
-            Building and leading high-performing CS organizations — from individual contributors to Team Leads and managers. A people-first leader with a CPA foundation, a track record of enterprise growth, and a hands-on approach to AI innovation.
+            I build high-performing CS teams and I build actual AI products. Second-line CS leader with a $30M portfolio, co-founder of a Lovable Select Partner studio, and someone who ships things — not just talks about them.
           </motion.p>
 
           <motion.div

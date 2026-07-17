@@ -220,9 +220,9 @@ export default function Contact() {
             margin: '2rem auto 0',
             lineHeight: 1.6,
           }}>
-            <strong>Open to Customer Success and Account Management leadership roles</strong> at
-            AI-forward companies. I believe in selling on value and building teams that deliver
-            meaningful results. If you're building something exciting, let's connect.
+            <strong>Open to CS leadership roles at AI-native companies</strong> building something
+            that matters. I bring a builder's instinct, a second-line leadership track record,
+            and a genuine obsession with making customers successful. If you're building the future, let's talk.
           </p>
         </motion.div>
       </div>
