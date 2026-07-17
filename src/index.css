@@ -55,7 +55,7 @@
   --color-bg-alt:       var(--accent-soft);
   --color-white:        var(--bg-surface);
   --color-border:       var(--border);
-  --gradient-primary:   var(--accent);
+  --gradient-primary:   linear-gradient(135deg, #5E3819 0%, #B8895A 100%);
   --gradient-card:      var(--bg-surface);
   --gradient-hero:      var(--bg-base);
 

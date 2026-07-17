@@ -19,7 +19,11 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section" style={{
-      background: 'var(--gradient-hero)',
+      background: `
+        radial-gradient(ellipse at 80% 30%, rgba(194,139,90,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 70%, rgba(240,223,209,0.45) 0%, transparent 50%),
+        #F3EFE6
+      `,
       position: 'relative',
       overflow: 'hidden',
     }}>

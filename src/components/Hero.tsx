@@ -20,7 +20,12 @@ export default function Hero() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--gradient-hero)',
+        background: `
+          radial-gradient(ellipse at 15% 40%, rgba(194,139,90,0.18) 0%, transparent 55%),
+          radial-gradient(ellipse at 85% 15%, rgba(240,223,209,0.55) 0%, transparent 50%),
+          radial-gradient(ellipse at 65% 85%, rgba(212,160,96,0.12) 0%, transparent 45%),
+          #F3EFE6
+        `,
         position: 'relative',
         overflow: 'hidden',
         paddingTop: '5rem',
