@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Sparkles, Users, Heart, Bike, Code } from 'lucide-react';
+import { Sparkles, Users, Heart, Bike, Trophy } from 'lucide-react';
 import RevealText from './RevealText';
 
 const activities = [
@@ -30,7 +30,7 @@ const activities = [
     highlight: false,
   },
   {
-    icon: Code,
+    icon: Trophy,
     title: 'Captain, Vena Softball Team',
     description: 'Building team camaraderie and healthy competition through organized sports and social events.',
     highlight: false,
@@ -62,7 +62,7 @@ export default function Community() {
           </motion.p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.875rem' }}>
+        <div className="stats-grid">
           {activities.map((activity, index) => (
             <motion.div
               key={index}
