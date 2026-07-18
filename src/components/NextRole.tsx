@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Compass, Sparkles, Users, TrendingUp, Lightbulb } from 'lucide-react';
+import { Compass, Sparkles, Zap, TrendingUp, Lightbulb } from 'lucide-react';
 import RevealText from './RevealText';
 
 const pillars = [
@@ -12,10 +12,10 @@ const pillars = [
     chipBg: '#F0DFD1', chipInk: '#8F4A26',
   },
   {
-    icon: Users,
-    title: 'People Leadership',
-    description: 'The space to build and develop a high-performing Customer Success org — hiring, coaching managers, developing Team Leads — at a company moving fast enough that what you build today defines the culture tomorrow.',
-    chipBg: '#DEE4E6', chipInk: '#3F565F',
+    icon: Zap,
+    title: 'Right Fit Over Right Title',
+    description: 'Company and mission come first — title is secondary. I\'m open to both IC and leadership roles at the right place. What I\'m optimizing for is meaningful work, a strong team, and a clear path to build something bigger over time.',
+    chipBg: '#E8E5CE', chipInk: '#56582C',
   },
   {
     icon: TrendingUp,
