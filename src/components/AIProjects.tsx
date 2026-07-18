@@ -148,10 +148,14 @@ export default function AIProjects() {
           >
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: 'var(--gradient-primary)' }} />
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-              <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--gradient-card)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', overflow: 'hidden' }}>
+              <div>
                 {project.logo
-                  ? <img src={project.logo} alt={project.title} style={{ width: '42px', height: '42px', objectFit: 'contain' }} />
-                  : <project.icon size={26} />
+                  ? <img src={project.logo} alt={project.title} style={{ height: '36px', width: 'auto', maxWidth: '120px', objectFit: 'contain', display: 'block' }} />
+                  : (
+                    <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'var(--gradient-card)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)' }}>
+                      <project.icon size={26} />
+                    </div>
+                  )
                 }
               </div>
               <span style={{ fontSize: '0.8rem', fontWeight: 600, color: project.statusColor, background: `${project.statusColor}15`, padding: '0.3rem 0.85rem', borderRadius: '1rem' }}>
@@ -159,26 +163,17 @@ export default function AIProjects() {
               </span>
             </div>
 
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.5rem', fontFamily: 'var(--font-sans)' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.75rem', fontFamily: 'var(--font-sans)' }}>
               {project.title}
             </h3>
 
             {project.lovableBadge && (
-              <div style={{ marginBottom: '0.75rem' }}>
-                <span style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.375rem',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  color: '#BE3B6E',
-                  background: '#FEF1F6',
-                  border: '1px solid #F2C4D6',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '1rem',
-                }}>
-                  ♥ Lovable Select Partner
-                </span>
+              <div style={{ marginBottom: '1rem' }}>
+                <img
+                  src="/logos/lovable-select-partner.png"
+                  alt="Lovable Select Partner"
+                  style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
+                />
               </div>
             )}
 
