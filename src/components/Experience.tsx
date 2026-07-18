@@ -5,10 +5,11 @@ import { Building2, ChevronRight, Sparkles, Layers, TrendingUp } from 'lucide-re
 import RevealText from './RevealText';
 
 const venaRoles = [
-  { period: '2024 – Present', title: 'Director of Account Management', isCurrent: true },
-  { period: '2024',           title: 'Director of Customer Success' },
-  { period: '2021 – 2024',    title: 'Senior Manager / Manager, Customer Success' },
-  { period: '2019 – 2021',    title: 'Senior Customer Success Manager' },
+  { period: 'Nov 2024 – Present',  title: 'Director of Account Management',             isCurrent: true },
+  { period: 'Aug – Nov 2024',      title: 'Director of Customer Success' },
+  { period: 'Aug 2021 – Aug 2024', title: 'Senior Manager / Manager, Customer Success' },
+  { period: 'Feb 2020 – Aug 2021', title: 'Senior Customer Success Manager' },
+  { period: 'Sep 2019 – Feb 2020', title: 'Customer Success Manager' },
 ];
 
 const venaMetrics = [
@@ -30,7 +31,7 @@ const otherCompanies = [
   {
     company: 'Rogers Communications',
     location: 'Toronto',
-    period: '2017 – 2019',
+    period: 'Jan 2018 – Aug 2019',
     title: 'Senior Financial Analyst',
     tags: [{ label: 'Financial Planning', bg: '#E8E5CE', ink: '#56582C' }, { label: 'Data Analytics', bg: '#F0DFD1', ink: '#8F4A26' }],
     highlights: [
@@ -42,7 +43,7 @@ const otherCompanies = [
   {
     company: 'Ernst & Young Canada',
     location: 'Toronto',
-    period: '2013 – 2017',
+    period: 'Oct 2014 – Dec 2017',
     title: 'Senior Staff Accountant',
     tags: [{ label: 'CPA, CA', bg: '#F2E5C8', ink: '#806013' }, { label: 'Multi-Industry', bg: '#E4E8D9', ink: '#465440' }],
     highlights: [
@@ -108,7 +109,7 @@ export default function Experience() {
               </div>
               <div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text)', fontFamily: 'var(--font-sans)' }}>Vena Solutions</h3>
-                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-light)' }}>Toronto · 2019 – Present</p>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-light)' }}>Toronto · Sep 2019 – Present</p>
               </div>
             </div>
             <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-primary)', background: 'var(--accent-soft)', padding: '0.25rem 0.75rem', borderRadius: '1rem' }}>
