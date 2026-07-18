@@ -95,8 +95,9 @@ export default function ClientUserGroups() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
             gap: '1rem',
             marginBottom: '2rem',
           }}
@@ -116,6 +117,7 @@ export default function ClientUserGroups() {
                 boxShadow: 'var(--shadow-md)',
                 border: `1px solid ${industry.chipBg}`,
                 cursor: 'default',
+                flex: '0 1 150px',
               }}
             >
               <div style={{

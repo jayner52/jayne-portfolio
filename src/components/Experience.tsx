@@ -30,6 +30,8 @@ const venaHighlights = [
 const otherCompanies = [
   {
     company: 'Rogers Communications',
+    logo: '/logos/rogers.png',
+    logoBox: true,
     location: 'Toronto',
     period: 'Jan 2018 – Aug 2019',
     title: 'Senior Financial Analyst',
@@ -42,6 +44,8 @@ const otherCompanies = [
   },
   {
     company: 'Ernst & Young Canada',
+    logo: '/logos/ey.png',
+    logoBox: false,
     location: 'Toronto',
     period: 'Oct 2014 – Dec 2017',
     title: 'Senior Staff Accountant',
@@ -104,9 +108,7 @@ export default function Experience() {
           {/* Header */}
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '10px', background: 'var(--gradient-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', flexShrink: 0 }}>
-                <Building2 size={22} />
-              </div>
+              <img src="/logos/vena.png" alt="Vena Solutions" style={{ height: '38px', width: 'auto', maxWidth: '110px', objectFit: 'contain', display: 'block', flexShrink: 0 }} />
               <div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--color-text)', fontFamily: 'var(--font-sans)' }}>Vena Solutions</h3>
                 <p style={{ fontSize: '0.8rem', color: 'var(--color-text-light)' }}>Toronto · Sep 2019 – Present</p>
@@ -179,9 +181,12 @@ export default function Experience() {
           >
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.875rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'var(--color-bg-alt)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', flexShrink: 0 }}>
-                  <Building2 size={20} />
-                </div>
+                {co.logoBox
+                  ? <div style={{ width: '72px', height: '38px', borderRadius: '8px', overflow: 'hidden', border: '1px solid var(--border)', flexShrink: 0 }}>
+                      <img src={co.logo} alt={co.company} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                  : <img src={co.logo} alt={co.company} style={{ height: '38px', width: 'auto', maxWidth: '80px', objectFit: 'contain', display: 'block', flexShrink: 0 }} />
+                }
                 <div>
                   <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--color-text)', fontFamily: 'var(--font-sans)' }}>{co.company}</h3>
                   <p style={{ fontSize: '0.775rem', color: 'var(--color-text-light)' }}>{co.location} · {co.period}</p>
