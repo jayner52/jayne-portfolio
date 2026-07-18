@@ -65,7 +65,7 @@ export default function Stats() {
           </motion.p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+        <div className="stats-grid">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
