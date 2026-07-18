@@ -43,7 +43,7 @@ export default function Certifications() {
           </motion.p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.875rem' }}>
           {certifications.map((cert, index) => {
             const chipColor = categoryColors[cert.category] || { bg: '#E8E5CE', ink: '#56582C' };
             return (

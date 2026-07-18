@@ -253,7 +253,7 @@ export default function Hero() {
               { value: '5x', label: "President's Club" },
               { value: '$30M', label: 'Portfolio Managed' },
               { value: '120%+', label: 'Quota Attainment' },
-              { value: '7', label: 'Managers Led' },
+              { value: '7', label: 'AMs Led' },
             ].map((stat, index) => (
               <div key={index} style={{ textAlign: 'center' }}>
                 <div style={{

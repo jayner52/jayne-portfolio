@@ -88,10 +88,11 @@ export default function Navigation() {
           left: 0,
           right: 0,
           zIndex: 1000,
-          background: isScrolled ? 'rgba(243, 239, 230, 0.97)' : 'transparent',
-          backdropFilter: isScrolled ? 'blur(10px)' : 'none',
-          boxShadow: isScrolled ? 'var(--shadow-md)' : 'none',
-          transition: 'all 0.3s ease',
+          background: 'rgba(243, 239, 230, 0.97)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: isScrolled ? '1px solid var(--border)' : '1px solid transparent',
+          boxShadow: isScrolled ? '0 1px 24px rgba(58, 45, 30, 0.06)' : 'none',
+          transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
         }}
       >
         <nav style={{
