@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Users, MapPin, Building2, Home, Trophy, Hotel, Monitor, Factory, Heart } from 'lucide-react';
+import { Users, Building2, Home, Trophy, Hotel, Monitor, Factory, Heart } from 'lucide-react';
 import RevealText from './RevealText';
 
 const industries = [
@@ -14,16 +14,6 @@ const industries = [
   { name: 'Not-for-Profit',icon: Heart,     chipBg: '#E4E8D9', chipInk: '#465440' },
 ];
 
-const cities = ['New York City', 'Dallas', 'Las Vegas', 'Austin'];
-
-const activities = [
-  'Show & Tell Sessions',
-  'Product Demos',
-  'Networking Events',
-  'Thought Leadership',
-  'Best Practice Sharing',
-  'Executive Panels',
-];
 
 export default function ClientUserGroups() {
   const ref = useRef(null);
@@ -145,96 +135,6 @@ export default function ClientUserGroups() {
           ))}
         </motion.div>
 
-        {/* Cities */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
-            marginBottom: '2rem',
-            flexWrap: 'wrap',
-          }}
-        >
-          {cities.map((city, index) => (
-            <span
-              key={index}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.375rem',
-                padding: '0.5rem 1rem',
-                background: 'var(--gradient-card)',
-                borderRadius: '2rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                color: 'var(--color-text)',
-                border: '1px solid var(--color-border)',
-              }}
-            >
-              <MapPin size={14} style={{ color: 'var(--color-primary)' }} />
-              {city}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* Activity Types */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.75rem',
-            justifyContent: 'center',
-            marginBottom: '2.5rem',
-          }}
-        >
-          {activities.map((activity, index) => (
-            <span
-              key={index}
-              style={{
-                padding: '0.5rem 1rem',
-                background: 'var(--color-bg-alt)',
-                borderRadius: '0.5rem',
-                fontSize: '0.85rem',
-                color: 'var(--color-text-light)',
-              }}
-            >
-              {activity}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* Impact Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          style={{
-            textAlign: 'center',
-            padding: '2rem',
-            background: 'var(--gradient-card)',
-            borderRadius: '1rem',
-            borderLeft: '4px solid var(--color-primary)',
-          }}
-        >
-          <p style={{
-            fontSize: '1.1rem',
-            color: 'var(--color-text)',
-            maxWidth: '700px',
-            margin: '0 auto',
-            lineHeight: 1.7,
-          }}>
-            <strong>Why User Groups Matter:</strong> Customer communities drive advocacy,
-            reduce churn through peer connection, and create invaluable feedback loops
-            that inform product development and GTM strategy. These aren't just meetings - they're
-            ecosystems of shared success.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

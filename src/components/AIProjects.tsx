@@ -246,20 +246,6 @@ export default function AIProjects() {
           {current + 1} / {projects.length}
         </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          style={{ marginTop: '3rem', textAlign: 'center', padding: '2rem', background: 'var(--gradient-card)', borderRadius: '1rem' }}
-        >
-          <p style={{ fontSize: '1rem', color: 'var(--color-text)', maxWidth: '700px', margin: '0 auto' }}>
-            <strong>Why this matters:</strong> These projects demonstrate my approach to innovation —
-            I'm not waiting for permission to experiment with AI. I'm building, learning, and
-            finding practical applications that drive real value. Technical curiosity paired with
-            business acumen.
-          </p>
-        </motion.div>
-
       </div>
     </section>
   );

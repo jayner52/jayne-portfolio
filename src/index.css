@@ -126,7 +126,7 @@ strong { font-weight: 600; }
 }
 
 .section {
-  padding: 6rem 0;
+  padding: 4.5rem 0;
 }
 
 @media (max-width: 768px) {
@@ -157,7 +157,7 @@ strong { font-weight: 600; }
   color: var(--text-secondary);
   font-size: 1.0625rem;
   max-width: 580px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 2rem;
   line-height: 1.6;
 }
 
