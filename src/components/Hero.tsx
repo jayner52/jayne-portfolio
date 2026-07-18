@@ -67,7 +67,7 @@ export default function Hero() {
                   borderRadius: '50%',
                   objectFit: 'cover',
                   border: '4px solid white',
-                  filter: 'grayscale(1) contrast(1.05)',
+                  filter: 'none',
                 }}
               />
             </motion.div>
@@ -99,7 +99,7 @@ export default function Hero() {
                 >
                   <Dog size={18} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
                   <span style={{ fontSize: '0.85rem', color: 'var(--color-text)' }}>
-                    <strong>Meet Riley!</strong> My bichonpoo and best friend
+                    That's Riley — my bichonpoo and best co-worker
                   </span>
                 </motion.div>
               )}
