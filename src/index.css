@@ -161,19 +161,35 @@ strong { font-weight: 600; }
   line-height: 1.6;
 }
 
-/* Cards: flat at rest, premium lift on hover */
+/* Cards: flat at rest, premium lift + shimmer on hover */
 .card {
   background: var(--bg-surface);
   border-radius: var(--radius);
   padding: 1.375rem;
   border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
   transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1), box-shadow 0.25s cubic-bezier(0.33, 1, 0.68, 1), border-color 0.25s ease;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(108deg, transparent 40%, rgba(255,255,255,0.55) 50%, transparent 60%);
+  transform: translateX(-100%);
+  pointer-events: none;
 }
 
 .card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-5px);
   border-color: var(--accent-soft);
+}
+
+.card:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.55s ease;
 }
 
 .gradient-text {

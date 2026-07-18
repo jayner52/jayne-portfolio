@@ -1,9 +1,11 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Linkedin, Mail, MapPin, Dog, Download } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Hero() {
   const [showRiley, setShowRiley] = useState(false);
+  const { scrollY } = useScroll();
+  const headshotY = useTransform(scrollY, [0, 600], [0, -60]);
 
   const handleScrollToAbout = () => {
     const element = document.querySelector('#about');
@@ -40,6 +42,7 @@ export default function Hero() {
         >
           {/* Headshot - Click for Riley Easter Egg */}
           <div style={{ position: 'relative', display: 'inline-block' }}>
+            <motion.div style={{ y: headshotY }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -104,6 +107,7 @@ export default function Hero() {
                 </motion.div>
               )}
             </AnimatePresence>
+            </motion.div>
           </div>
 
           <motion.p
@@ -135,7 +139,9 @@ export default function Hero() {
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 700,
               marginBottom: '1rem',
-              color: 'var(--color-text)',
+              background: 'var(--gradient-primary)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}
           >
             Jayne Ingram-Roberts
